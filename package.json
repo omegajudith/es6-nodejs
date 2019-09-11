@@ -1,0 +1,25 @@
+{
+  "name": "es6-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omegajudith/es6-nodejs.git"
+  },
+  "author": "judith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omegajudith/es6-nodejs/issues"
+  },
+  "homepage": "https://github.com/omegajudith/es6-nodejs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
