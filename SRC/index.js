@@ -1,11 +1,14 @@
-const div = document.querySelector('#root')
+// import displayDate from './App/todayDate.js'
+var displayDate = require('./App/todayDate.js')
 
-const myParagraph = document.createElement('p');
+let div = document.querySelector('#root')
+console.log(div)
+
+myParagraph = document.createElement('p');
 div.appendChild(myParagraph)
 myParagraph.className = "dyna";
 
 myParagraph.innerHTML = `The time is ${displayDate}!`
 
 
-import {displayDate} from ('./todayDate.js')
-displayDate();
+// console.log('&&&&&&&&&&&&&&&&&', displayDate);

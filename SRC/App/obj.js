@@ -20,3 +20,8 @@ const Person = {
 };
 
 export{getAge};
+
+// const keys = Object.keys(fruits)
+// for (const key of keys) {
+//   console.log(key)
+// }
