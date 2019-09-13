@@ -1,16 +1,18 @@
-import displayDate from './App/todayDate.js'
-import oblits from './App/obj'
-// var displayDate = require('./App/todayDate.js')
+import {today , date} from './App/todayDate.js'
+import {oblits} from './App/obj.js'
 
-let div = document.querySelector('#root')
-
+let myDiv = document.querySelector('#root');
 let myParagraph = document.createElement('p');
-div.appendChild(myParagraph)
+myDiv.appendChild(myParagraph)
+// myParagraph.innerHTML = "thanks erick for js love"
 myParagraph.className = "dyna";
 
-myParagraph.innerHTML = `The time is ${displayDate}!`
+myParagraph.innerHTML = "Today is " + today;
 
-displayDate();
+console.log(today);
+console.log(date);
+console.log(oblits);
+
 
 
 

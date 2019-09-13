@@ -123,16 +123,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.displayDate = displayDate;
-
-function displayDate() {
-  var today = new Date();
-  console.log(today);
-  return today;
-} // let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-// let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-// let dateTime = date+' '+time;
-// module.exports = displayDate;
+exports.date = exports.today = void 0;
+var today = new Date();
+exports.today = today;
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+exports.date = date;
+console.log(today);
+console.log(date);
 },{}],"../SRC/App/obj.js":[function(require,module,exports) {
 "use strict";
 
@@ -147,46 +144,38 @@ function oblits() {
     bornYear: 1900,
     age: function getAge() {
       var today = new Date();
-      var todayYear = today.getFullYear(); // console.log('%%%%%%%', todayYear)
-
+      var todayYear = today.getFullYear();
       var age = todayYear - this.bornYear;
+      console.log(Person);
       return age;
     }
   };
-  var fun = Person.age();
-  console.log('&&&&&&&&&', fun);
-  var keys = Object.values(Person);
+} // const fun = Person.age()
 
-  for (var _i = 0, _keys = keys; _i < _keys.length; _i++) {
-    var key = _keys[_i];
-    console.log('&&&&&&&&&', key);
-  }
-} // var today = new Date();
-//       var birthDate = new Date(dateString);
-//       var age = today.getFullYear() - birthDate.getFullYear();
-//       var m = today.getMonth() - birthDate.getMonth();
-//       if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-//         age;
-//       console.log(birthDate);
-//       for (var i = 0; i < Person.length; i++) {
-//       console.log(Person[i]);
+
+var keys = Object.values(Person);
+
+for (var _i = 0, _keys = keys; _i < _keys.length; _i++) {
+  var key = _keys[_i];
+  console.log('&&&&&&&&&', key);
+}
 },{}],"../SRC/index.js":[function(require,module,exports) {
 "use strict";
 
-var _todayDate = _interopRequireDefault(require("./App/todayDate.js"));
+var _todayDate = require("./App/todayDate.js");
 
-var _obj = _interopRequireDefault(require("./App/obj"));
+var _obj = require("./App/obj.js");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// var displayDate = require('./App/todayDate.js')
-var div = document.querySelector('#root');
+var myDiv = document.querySelector('#root');
 var myParagraph = document.createElement('p');
-div.appendChild(myParagraph);
+myDiv.appendChild(myParagraph); // myParagraph.innerHTML = "thanks erick for js love"
+
 myParagraph.className = "dyna";
-myParagraph.innerHTML = "The time is ".concat(_todayDate.default, "!");
-(0, _todayDate.default)();
-},{"./App/todayDate.js":"../SRC/App/todayDate.js","./App/obj":"../SRC/App/obj.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+myParagraph.innerHTML = "Today is " + _todayDate.today;
+console.log(_todayDate.today);
+console.log(_todayDate.date);
+console.log(_obj.oblits);
+},{"./App/todayDate.js":"../SRC/App/todayDate.js","./App/obj.js":"../SRC/App/obj.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -214,7 +203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44073" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44613" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
