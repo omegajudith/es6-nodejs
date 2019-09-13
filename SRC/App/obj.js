@@ -1,27 +1,29 @@
 
 
-const Person = {
-  name: "kanye-west",
-  bornYear: 1900,
-  age: function getAge(){
-
-    let today = new Date();
-    let todayYear = today.getFullYear();
-    // console.log('%%%%%%%', todayYear)
-    let age = todayYear - this.bornYear
-    return age;
-
+function oblits() {
+  const Person = {
+    name: "kanye-west",
+    bornYear: 1900,
+    age: function getAge(){
+  
+      let today = new Date();
+      let todayYear = today.getFullYear();
+      // console.log('%%%%%%%', todayYear)
+      let age = todayYear - this.bornYear
+      return age;
+  
+    }
+  }
+  
+  const fun = Person.age()
+  console.log('&&&&&&&&&', fun)
+  
+  const keys = Object.values(Person)
+  for (const key of keys) {
+    console.log('&&&&&&&&&', key)
   }
 }
-
-// const fun = Person.age()
-
-// console.log('&&&&&&&&&', fun)
-
-const keys = Object.values(Person)
-for (const key of keys) {
-  console.log('&&&&&&&&&', key)
-}
+export  {oblits};
 
 // var today = new Date();
 //       var birthDate = new Date(dateString);
